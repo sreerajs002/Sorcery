@@ -1,0 +1,29 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+
+    <div id="error_explanation " class="alert alert-danger overlay" >
+      <h5 class="text-center">Form is invalid</h5>
+      <ul class="col-xs-offset-1 col-md-offset-5">
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+      </p>
+    </div>
+    <br><br><br><br><br><br>
+  <% end %>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email ,class:'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password ,class:'form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation ,class:'form-control'%>
+  </div>
+  <br>
+  <%= f.submit class:'btn btn-info btn-block' %>
+<% end %>  
